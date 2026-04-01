@@ -2,6 +2,7 @@ services:
   - type: web
     name: flightsight-app
     env: node
+    plan: free
     rootDir: .
     buildCommand: cd frontend && npm install && npm run build && cd ../backend && npm install
     startCommand: cd backend && node server.js
