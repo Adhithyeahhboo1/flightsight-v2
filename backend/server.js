@@ -13,13 +13,9 @@ const PORT   = Number(process.env.PORT || 3001);
 const SECRET = process.env.JWT_SECRET || 'flightsight_jwt_secret_2024';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
-const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || `http://localhost:${PORT}`;
 const frontendDistPath = path.resolve(__dirname, '..', 'frontend', 'dist');
 
-app.use(cors({
-  origin: FRONTEND_ORIGIN,
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json());
 
 // ─── DB POOL ─────────────────────────────────────────────
